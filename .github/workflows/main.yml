@@ -23,10 +23,10 @@ jobs:
         #  - local
         #projectPath:
         #  - test-project
-         unityVersion:
-           - 2021.3.16f1
-           - 2022.2.2f1 
-           - 2023.1.0fa25
+        unityVersion:
+          - 2021.3.16f1
+          - 2022.2.2f1 
+          - 2023.1.0fa25
         targetPlatform:
         #  - StandaloneOSX # Build a macOS standalone (Intel 64-bit).
           - StandaloneWindows64 # Build a Windows 64-bit standalone.
