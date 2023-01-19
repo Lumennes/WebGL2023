@@ -23,10 +23,10 @@ jobs:
         #  - local
         #projectPath:
         #  - test-project
-        # unityVersion:
-          # - 2022.2.1f1          
-        #  - 2019.2.11f1
-        #  - 2019.3.15f1
+         unityVersion:
+           - 2021.3.16f1
+           - 2022.2.2f1 
+           - 2023.1.0fa25
         targetPlatform:
         #  - StandaloneOSX # Build a macOS standalone (Intel 64-bit).
           - StandaloneWindows64 # Build a Windows 64-bit standalone.
@@ -66,7 +66,7 @@ jobs:
       - uses: game-ci/unity-builder@v2
         with:
           #projectPath: ${{ matrix.projectPath }}
-          # unityVersion: ${{ matrix.unityVersion }}
+          unityVersion: ${{ matrix.unityVersion }}
           targetPlatform: ${{ matrix.targetPlatform }}
           buildName: ${{ matrix.projectName }}
           #customParameters: -profile SomeProfile -someBoolean -someValue exampleValue
@@ -84,7 +84,7 @@ jobs:
           
       - uses: Difegue/action-megacmd@master
         with:
-          args: put -c build/${{ matrix.targetPlatform }} /Unity_projects/${{ matrix.projectName }}/
+          args: put -c build/${{ matrix.targetPlatform }} /Unity_projects/${{ matrix.projectName }}/${{ matrix.unityVersion }}/
         env:
           USERNAME: ${{ secrets.MEGA_USERNAME }}
           PASSWORD: ${{ secrets.MEGA_PASSWORD }}
